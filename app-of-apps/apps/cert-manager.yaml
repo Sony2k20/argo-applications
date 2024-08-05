@@ -18,8 +18,4 @@ spec:
   destination:
     namespace: cert-manager
     name: in-cluster
-  syncPolicy:
-    automated: {}
-    syncOptions:
-      - CreateNamespace=true
-      - ServerSideApply=true
+  syncPolicy: {}
