@@ -9,7 +9,7 @@ spec:
     name: in-cluster
   project: default
   source:
-    path: helm/ng-web-blog
+    path: helm-charts/ng-web-blog
     repoURL: https://github.com/Sony2k20/argo-applications.git
     targetRevision: HEAD
   syncPolicy:
