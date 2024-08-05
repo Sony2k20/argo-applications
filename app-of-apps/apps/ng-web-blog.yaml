@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ng-web-blog
+  namespace: argocd
+spec:
+  destination:
+    namespace: prod
+    name: in-cluster
+  project: default
+  source:
+    path: helm/ng-web-blog
+    repoURL: https://github.com/Sony2k20/argo-applications.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
