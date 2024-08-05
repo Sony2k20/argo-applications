@@ -14,8 +14,8 @@ spec:
     path: helm-charts/web-portfolio
     repoURL: https://github.com/Sony2k20/argo-applications.git
     targetRevision: HEAD
-  syncPolicy: {}
-    # automated:
-    #   prune: true
-    # syncOptions:
-    #   - CreateNamespace=true
+  syncPolicy: 
+    automated:
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
