@@ -24,7 +24,7 @@ spec:
             source: secret
             secretName: tls-rancher-ingress
   destination:
-    namespace: rancher
+    namespace: cattle-system
     name: in-cluster
   syncPolicy:
     automated:
