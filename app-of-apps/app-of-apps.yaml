@@ -11,4 +11,8 @@ spec:
     repoURL: 'https://github.com/Sony2k20/argo-applications.git'
     targetRevision: HEAD
   project: default
-  syncPolicy: {}
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - PruneLast=true
+      - CreateNamespace=true
