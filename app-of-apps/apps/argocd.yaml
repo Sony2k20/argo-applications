@@ -30,4 +30,3 @@ spec:
   destination:
     namespace: argocd
     name: in-cluster
-  syncPolicy: {}
