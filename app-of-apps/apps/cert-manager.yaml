@@ -16,4 +16,3 @@ spec:
   destination:
     namespace: cert-manager
     name: in-cluster
-  syncPolicy: {}
