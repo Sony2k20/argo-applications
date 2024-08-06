@@ -26,3 +26,8 @@ spec:
   destination:
     namespace: rancher
     name: in-cluster
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - CreateNamespace=true
