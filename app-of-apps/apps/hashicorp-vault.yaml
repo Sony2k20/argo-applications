@@ -9,19 +9,18 @@ spec:
     repoURL: https://charts.bitnami.com/bitnami
     chart: vault
     targetRevision: '1.4.18'
-    # helm:
-    #   values: |
-    #     server:
-    #       enabled: true
-    #       ingress:
-    #         enabled: true
-    #         hostname: vault.csnguyen.de
-    #         annotations: 
-    #           |
-    #           cert-manager.io/cluster-issuer: letsencrypt-prod
-    #           traefik.ingress.kubernetes.io/router.middlewares: prod-redirect-https@kubernetescrd
-    #         ingressClassName: traefik
-    #         tls: true
+    helm:
+      values: |
+        server:
+          enabled: true
+          ingress:
+            enabled: true
+            hostname: vault.csnguyen.de
+            annotations:
+              cert-manager.io/cluster-issuer: letsencrypt-prod
+              traefik.ingress.kubernetes.io/router.middlewares: prod-redirect-https@kubernetescrd
+            ingressClassName: traefik
+            tls: true
   destination:
     namespace: hashicorp-vault
     name: in-cluster
