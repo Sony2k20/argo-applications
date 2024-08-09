@@ -6,27 +6,22 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://helm.releases.hashicorp.com
+    repoURL: https://charts.bitnami.com/bitnami
     chart: vault
-    targetRevision: '0.28.1'
+    targetRevision: '1.4.18'
     helm:
       values: |
         server:
           enabled: true
           ingress:
             enabled: true
+            hostname: vault.csnguyen.de
             annotations: 
               |
               cert-manager.io/cluster-issuer: letsencrypt-prod
               traefik.ingress.kubernetes.io/router.middlewares: prod-redirect-https@kubernetescrd
             ingressClassName: traefik
-            activeService: true
-            hosts:
-              - host: vault.csnguyen.de
-            tls: []
-              - secretName: hashicorp-vault-tls
-              hosts:
-                - vault.csnguyen.de
+            tls: true
   destination:
     namespace: hashicorp-vault
     name: in-cluster
